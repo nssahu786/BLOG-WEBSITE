@@ -1,0 +1,54 @@
+<%- include('./header.ejs') %>
+
+<!-- Header Start -->
+<div class="container-fluid page-header">
+  <div class="container">
+      <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+          <h3 class="display-4 text-white text-uppercase">Contact</h3>
+          <div class="d-inline-flex text-white">
+              <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+              <i class="fa fa-angle-double-right pt-1 px-3"></i>
+              <p class="m-0 text-uppercase">Contact</p>
+          </div>
+      </div>
+  </div>
+</div><br><br><br>
+<!-- Header End -->
+
+
+<section class="cmspage mtb-40">
+    <div class="container">
+      <div class="page-desc">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="position-relative h-100">
+              <img class="position-absolute w-100 h-100" src="assets/images/contact1.jpg" style="object-fit: cover;">
+          </div>
+          </div>
+          <div class="col-md-8">
+            <h1 class="text-danger">CONTACT<span class="text-info"> US</span></h1><br><br>
+            <form action="/admin/contactinsert" method="post">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input type="text" name="email" class="form-control" placeholder="E-Mail">
+              </div>
+              <div class="form-group">
+                <input type="text" name="phone" class="form-control" placeholder="Phone">
+              </div>
+              <div class="form-group">
+                <textarea name="message" rows="5" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-success">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<%- include('./footer.ejs') %>

@@ -1,0 +1,115 @@
+<%- include('./header.ejs') %>
+
+
+<section class="banner">
+    <div class="banner-box">
+        <div class="intro-text">
+            <div class="intro-text-box" style="width: 55%;margin: auto;background-color: rgb(149 108 47 / 49%);padding: 25px;border: 10px solid #cc922c;">
+                <h1 style="color: #cc113d;font-family: initial;font-weight: 600 !important;font-size: xxx-large !important;">Tecnology Hub</h1>
+                <p style="color: #7be3d1;font-size: initial;font-family: serif;">Technology is the result of accumulated knowledge and application of skills, methods, and processes used in industrial production and scientific research.</p>
+            </div>
+        </div>
+        <img src="assets/images/banner1.jpg" alt="banner" />
+    </div>
+</section>
+
+<!-- <section class="featured-blog mtb-40">
+    <div class="container">
+        <div class="row">
+            <% data.forEach((item)=>{ %>
+            <div class="col-md-4">
+                <div class="blog-box">
+                    <img src="assets/images/img1.jpg" alt="blog1" />
+                    <h3><%= item.title %></h3>
+                    <p><%= item.description.slice(0, 90) %></p> 
+                       <!-- words ko less dikhane keliye -->
+                    <!-- <p><%= item.createdAt.toLocaleDateString() %></p> -->
+                    <!-- time ko show krna -->
+                    <!-- <a href="/detail/<%= item._id %>" class="btn btn-danger">Read more...</a>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div> -->
+<!-- </section> -->
+
+<!-- BLOG START -->
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-3 pb-3">
+            <!-- <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">OUR BLOGS</h6> -->
+            <h1 style="font-family: serif;color: #f10400;">LATEST FROM OUR BLOGS</h1><br><br><br>
+        </div>
+        <div class="row pb-3">
+            <% data.forEach((item)=>{ %>
+            <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                <div class="blog-item">
+                    <div class="position-relative">
+                        <img style="height: 360px;" class="img-fluid w-100" src="/imageupload/<%= item.image %>" alt="">
+                        <div class="blog-date">
+                            <h6 class="font-weight-bold mb-n1">01</h6>
+                            <small class="text-white text-uppercase">Jan</small>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4">
+                        <div class="d-flex mb-2">
+                            <h3 class="text-primary text-uppercase text-decoration-none" href=""><%= item.title %></h3>
+                        </div>
+                        
+                        <!-- words ko less dikhane keliye -->
+                        <p><%= item.createdAt.toLocaleDateString() %></p>
+                     <!-- time ko show krna -->
+                        <p class="h5 m-0 text-decoration-none" href=""><%= item.description.slice(0, 90) %></p>
+                        <a href="/detail/<%= item._id %>" class="btn btn-danger" style="margin-left: 80px;margin-top: 20px;">Read more...</a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                <div class="blog-item">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="assets/images/blog-2.jpg" alt="">
+                        <div class="blog-date">
+                            <h6 class="font-weight-bold mb-n1">01</h6>
+                            <small class="text-white text-uppercase">Jan</small>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4">
+                        <div class="d-flex mb-2">
+                            <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
+                            <span class="text-primary px-2">|</span>
+                            <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
+                        </div>
+                        <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                <div class="blog-item">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="assets/images/blog-3.jpg" alt="">
+                        <div class="blog-date">
+                            <h6 class="font-weight-bold mb-n1">01</h6>
+                            <small class="text-white text-uppercase">Jan</small>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4">
+                        <div class="d-flex mb-2">
+                            <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
+                            <span class="text-primary px-2">|</span>
+                            <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
+                        </div>
+                        <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
+                    </div>
+                </div>
+            </div> -->
+            <% }) %>
+        </div>
+    </div>
+</div>
+<!-- BLOG END -->
+
+
+
+
+
+<%- include('./footer.ejs') %>

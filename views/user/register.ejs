@@ -1,0 +1,128 @@
+<%- include('../header.ejs') %>
+
+<!-- Header Start -->
+<div class="container-fluid page-header">
+    <div class="container">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+            <h3 class="display-4 text-white text-uppercase">REGISTRATION</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">REGISTER</p>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+<!-- Header End -->
+
+<section class="login-wrap mtb-40">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-box bg-light">
+                    <h1 class="bg-light text-success">REGISTRATION</h1><br>
+                    <%if(message.length > 0){ %>
+                        <div class="alert alert-danger">
+                            <%=message %>
+                        </div>
+                    <% }%>
+                    <form action="/registerinsert" method="post" onsubmit="return validation()">
+                        <div class="form-group">
+                            <input type="text" name="username" class="form-control" id="user" placeholder="Username*">
+                            <span id="username" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control"  id="email" placeholder="Email*">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="mobile" class="form-control" id="mobile" placeholder="Mobile Number*">
+                            <span id="mno" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" id="" placeholder="Password*">
+                            <span id="" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="confirmpassword" class="form-control" id="" placeholder="Confirm Password*">
+                            <span id="" class="text-danger font-weight-bold"></span>
+                        </div>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <a href="/login" class="btn btn-info">LOG IN</a>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <button class="btn btn-primary">SUBMIT</button>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <a href="" class="btn btn-primary">Log In</a>
+                        </div>
+                        <div class="form-group">
+                            <a href="" class="btn btn-primary">Sign Up</a>
+                        </div> -->
+                    </form>
+                </div>         
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+
+
+function validation()
+        {
+            var user = document.getElementById('user').value;
+            var pass = document.getElementById('pass').value;
+            var cpass = document.getElementById('cpass').value;
+            var mobile = document.getElementById('mobile').value;
+
+
+            if ((user.length < 3) || (user.length > 20))        // check length
+            {
+                document.getElementById('username').innerHTML = "  ** Username Length must be between 2 and 20";
+                return false;
+            }
+            if (!isNaN(user))           // check numbers are input
+            {
+                document.getElementById('username').innerHTML = "  ** Only Characters are alowed";
+                return false;
+            }
+            if ((pass.length <= 8) || (pass.length > 20))        // check length
+            {
+                document.getElementById('password').innerHTML = "  ** Password Length must be between 8 and 20";
+                return false;
+            }
+            if (pass != cpass)        // check password
+            {
+                document.getElementById('cpassword').innerHTML = "  ** Confirm Password does not match with password";
+                return false;
+            }
+            if (isNaN(mobile))        // check  number
+            {
+                document.getElementById('mno').innerHTML = "  **  Mobile Number Must have Digits Only characters are not allowed";
+                return false;
+            }
+            if (mobile.length != 10)        // check number length
+            {
+                document.getElementById('mno').innerHTML = "  ** Mobile Number Must be of 10 Digits Only";
+                return false;
+            }
+
+
+        }
+</script>
+
+
+<%- include('../footer.ejs') %>

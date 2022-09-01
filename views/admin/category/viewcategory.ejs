@@ -1,0 +1,57 @@
+<%- include('../../header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left" style="background-color: #a5d541;
+                        margin-bottom: 5px;">
+                        <ul style="outline-style: groove;">
+                            <li class="active"><a href="/admin/dashboard">DASHBOARD</a></li>
+                            <li><a href="/admin/createblog">CREATE BLOGS</a></li>
+                            <li><a href="/admin/displayblog">DISPLAY BLOGS</a></li>
+                            <li><a href="/admin/category/createcategory">CREATE CATEGORY</a></li>
+                            <li><a href="/admin/category/displaycategory">DISPLAY CATEGORY</a></li>
+                            <li><a href="/curd/create">CREATE CURD</a></li>
+                            <li><a href="/curd/display">DISPLAY CURD</a></li>
+                            <li><a href="/admin/displaycontact">DISPLAY CONTACTS</a></li>
+                            <li><a href="/admin/createabout">CREATE ABOUT</a></li>
+                            <li><a href="/admin/recent/createrecent">CREATE RECENT</a></li>
+                            <li><a href="/admin/recent/recentdisplay">DISPLAY RECENT</a></li>
+                            <li><a href="/about">ABOUT</a></li>
+                            <li><a href="/logout">LOGOUT</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1 class="text-success">VIEW CATEGORIES</h1>
+                            </div>
+                            <div class="dash-nav">
+                                <a href="/admin/viewcategory" class="btn btn-success">Add Post</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>SNo</th>
+                                <th>id</th>
+                                <th>NAME</th>
+                            </tr>
+                            <% var i=1 %>
+                            <tr>
+                                <td><%= i++ %></td>
+                                <td><%= data._id %></td>
+                                <td><%= data.catname %></td>
+                            </tr>
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../../footer.ejs') %>

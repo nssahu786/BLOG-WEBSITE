@@ -1,0 +1,54 @@
+<%- include('./header.ejs') %>
+
+<!-- Header Start -->
+<div class="container-fluid page-header">
+    <div class="container">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+            <h3 class="display-4 text-white text-uppercase">blog</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">blog</p>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+<!-- Header End -->
+
+<!-- BLOG START -->
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-3 pb-3">
+            <h1 style="font-family: serif;color: #f10400;">LATEST FROM OUR BLOGS</h1><br><br><br>
+        </div>
+        <div class="row pb-3">
+            <% data.forEach((item)=>{ %>
+            <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                <div class="blog-item">
+                    <div class="position-relative">
+                        <img style="height: 418px;" class="img-fluid w-100" src="/imageupload/<%= item.image %>" alt="">
+                        <div class="blog-date">
+                            <h6 class="font-weight-bold mb-n1">01</h6>
+                            <small class="text-white text-uppercase">Jan</small>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4">
+                        <div class="d-flex mb-2">
+                            <h3 class="text-primary text-uppercase text-decoration-none" href=""><%= item.title %></h3>
+                        </div>
+                        
+                        <!-- words ko less dikhane keliye -->
+                        <p><%= item.createdAt.toLocaleDateString() %></p>
+                     <!-- time ko show krna -->
+                        <p class="h5 m-0 text-decoration-none" href=""><%= item.description.slice(0, 90) %></p>
+                        <a href="/detail/<%= item._id %>" class="btn btn-danger" style="margin-left: 80px;margin-top: 20px;">Read more...</a>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+<!-- BLOG END -->
+
+<%- include('./footer.ejs') %>

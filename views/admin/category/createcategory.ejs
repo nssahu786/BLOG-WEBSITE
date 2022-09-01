@@ -1,0 +1,59 @@
+<%- include('../../header.ejs') %>
+
+    <section class="dashboard-wrap mtb-40">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="dash-left" style="background-color: #a5d541;
+                    margin-bottom: 5px;">
+                            <ul style="outline-style: groove;">
+                                <li class="active"><a href="/admin/dashboard">DASHBOARD</a></li>
+                                <li><a href="/admin/createblog">CREATE BLOGS</a></li>
+                                <li><a href="/admin/displayblog">DISPLAY BLOGS</a></li>
+                                <li><a href="/admin/category/createcategory">CREATE CATEGORY</a></li>
+                                <li><a href="/admin/category/displaycategory">DISPLAY CATEGORY</a></li>
+                                <li><a href="/curd/create">CREATE CURD</a></li>
+                                <li><a href="/curd/display">DISPLAY CURD</a></li>
+                                <li><a href="/admin/displaycontact">DISPLAY CONTACTS</a></li>
+                                <li><a href="/admin/createabout">CREATE ABOUT</a></li>
+                                <li><a href="/admin/recent/createrecent">CREATE RECENT</a></li>
+                                <li><a href="/admin/recent/recentdisplay">DISPLAY RECENT</a></li>
+                                <li><a href="/about">ABOUT</a></li>
+                                <li><a href="/logout">LOGOUT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1 class="text-primary">CREATE CATEGORY</h1>
+                                </div>
+                            </div>
+                            <div class="blog-form">
+                                <form action="categoryinsert" method="post">
+                                    <div class="form-group form-row">
+                                        <label class="col-md-3">Title <span class="required">*</span></label>
+                                        <div class="col-md-9">
+                                            <input name="catname" type="text" class="form-control" placeholder="Title"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-row">
+                                        <label class="col-md-3"></label>
+                                        <div class="col-md-9">
+                                            <button type="submit" class="btn btn-primary">SAVE</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <%- include('../../footer.ejs') %>

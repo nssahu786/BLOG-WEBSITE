@@ -1,0 +1,88 @@
+<%- include('./header.ejs') %>
+
+
+    <!-- Header Start -->
+    <div class="container-fluid page-header">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <h3 class="display-4 text-white text-uppercase">ADMINISTRATOR</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">login</p>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <!-- Header End -->
+
+
+
+    <section class="login-wrap mtb-40">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="login-box bg-light">
+                        <h1 class="bg-light text-success">ADMINISTRATOR LOGIN</h1><br>
+                        <%if(message.length > 0){ %>
+                            <div class="alert alert-primary">
+                                <%=message %>
+                            </div>
+                        <% }%>
+                                <form action="/verifylogin" method="post" onsubmit="return validation()">
+                                    <div class="form-group">
+                                        <input type="text" name="email" class="form-control" id="user"
+                                            placeholder="Email*">
+                                        <span id="username" class="text-danger font-weight-bold"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" class="form-control" id="pass"
+                                            placeholder="Password*">
+                                        <span id="password" class="text-danger font-weight-bold"></span>
+                                    </div><br><br>
+                                    <div class="row">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <button class="btn btn-info">LOG IN</button>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <a href="/register" class="btn btn-danger">REGISTER</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-6">
+                                            
+                                        </div>
+                                        <div class="col-md-2"></div>
+
+                                    </div>
+
+                                    <!-- <div class="form-group">
+                            <a href="" class="btn btn-primary">Log In</a>
+                        </div>
+                        <div class="form-group">
+                            <a href="" class="btn btn-primary">Sign Up</a>
+                        </div> -->
+                                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script>
+
+    </script>
+
+    <%- include('./footer.ejs') %>
