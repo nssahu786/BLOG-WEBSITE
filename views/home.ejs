@@ -59,7 +59,7 @@
                         <!-- words ko less dikhane keliye -->
                         <p><%= item.createdAt.toLocaleDateString() %></p>
                      <!-- time ko show krna -->
-                        <p class="h5 m-0 text-decoration-none" href=""><%= item.description.slice(0, 90) %></p>
+                        <p class="text-decoration-none"><%= item.description.slice(0, 90) %></p>
                         <a href="/detail/<%= item._id %>" class="btn btn-danger" style="margin-left: 80px;margin-top: 20px;">Read more...</a>
                     </div>
                 </div>
